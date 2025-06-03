@@ -77,7 +77,7 @@ Function collection($f : 4D.Function; $size : Integer/*; ... */) : Collection
 	//%W+550.16
 ```
 
-## The `meta` function
+## The Function
 
 the meta function returns the style object based on the row number and selected status.
 
