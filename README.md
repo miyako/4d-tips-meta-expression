@@ -59,8 +59,8 @@ End case
 
 `cs.DataGenerator` is a user class that generates a set of random data in a specific range. 
 
-> ![TIP]
-> in 20 R5 or later, you may want to make this class a singleton for efficiency.
+> [!TIP]
+> in 20 R5 or later, you may want to change this class to a [shared singleton](https://blog.4d.com/tag/singleton/) for efficiency
 
 ## The `meta` function
 
