@@ -36,6 +36,29 @@ This.palette.c1:={stroke: "rgb(240, 255, 255)"; fill: "rgb(0, 71, 171)"}
 
 in this example, the `0` suffix is for unselected lines and the `1` suffix is for selected lines.
 
+## On Load
+
+the listbox is setup during the *On Load* form event.
+
+```4d
+var $event : Object
+$event:=FORM Event
+
+Case of 
+	: ($event.code=On Load)
+		
+		var $generator : cs.DataGenerator
+		$generator:=cs.DataGenerator.new()
+		
+		//%W-550.12
+		Form.list:=cs.ListboxCollection.new($generator.collection($generator.lowercase; 80; 40))
+		//%W+550.12
+		
+End case 
+```
+
+`cs.DataGenerator` is a user class that generates a set of random data in a specific range. 
+
 ## The `meta` function
 
 the meta function returns the style object based on the row number and selected status.
