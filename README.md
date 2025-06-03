@@ -124,7 +124,7 @@ Form.list.meta.call(Form.list)
 you may think that `Form.list.meta` would suffice, but it does not. you need to explicitly define the expression as a function call that applies to a specific `This` object.
 
 > [!NOTE]
-> if you were to use a project method for the meta expression, the equivalent code would be
+> if you were to use a project method instead for the meta expression, the equivalent code would be
 > ```4d
 > return Form.list.meta
 > ```
