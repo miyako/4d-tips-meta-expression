@@ -7,4 +7,4 @@ Example of using the meta expression in a collection based listbox
 
 ## The Listbox
 
-for simplicity, the listbox has a single column whose `dataSource` is `This.value`. 
+for simplicity, the listbox has a single column whose `dataSource` is `This.value` to display a [collection of scalar values](https://developer.4d.com/docs/FormObjects/listboxOverview#collection-or-entity-selection-list-boxes).
