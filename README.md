@@ -4,3 +4,7 @@
 Example of using the meta expression in a collection based listbox
 
 <img src="https://github.com/user-attachments/assets/6eb58e4f-c955-4ae0-84fd-6cc5275f515e" width=400 height=auto />
+
+## The Listbox
+
+for simplicity, the listbox has a single columns whose `dataSource` is `This.value`. 
