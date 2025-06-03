@@ -34,7 +34,9 @@ This.palette.c0:={stroke: "rgb(96, 130, 182)"; fill: "rgb(173, 216, 230)"}
 This.palette.c1:={stroke: "rgb(240, 255, 255)"; fill: "rgb(0, 71, 171)"}
 ```
 
+you can create as many styles as necessary to handle every possible condition.  
 in this example, the `0` suffix is for unselected lines and the `1` suffix is for selected lines.
+the key is to have the style objects predefined, as opposed to creating a new object each time the meta expression is evaluated.
 
 ## On Load
 
