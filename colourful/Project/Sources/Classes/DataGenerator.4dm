@@ -1,7 +1,7 @@
 property LOWERCASE : Collection
 property UPPERCASE : Collection
 
-/*shared singleton*/Class constructor()
+/*shared singleton */Class constructor()
 
 This:C1470.LOWERCASE:=This:C1470.string("a"; "z")
 This:C1470.UPPERCASE:=This:C1470.string("A"; "Z")
@@ -16,7 +16,7 @@ Function collection($f : 4D:C1709.Function; $size : Integer/*; ... */) : Collect
 	$values:=[]
 	
 	var $ui : Integer
-	For ($i; 0; $size)
+	For ($i; 1; $size)
 		$values.push($f.apply(This:C1470; Copy parameters:C1790(3)))
 	End for 
 	
