@@ -34,9 +34,7 @@ This.palette.c0:={stroke: "rgb(96, 130, 182)"; fill: "rgb(173, 216, 230)"}
 This.palette.c1:={stroke: "rgb(240, 255, 255)"; fill: "rgb(0, 71, 171)"}
 ```
 
-you can create as many styles as necessary to handle every possible condition.  
-in this example, the `0` suffix is for unselected lines and the `1` suffix is for selected lines.  
-the key is to have all the style objects **predefined**, as opposed to creating a new object each time the meta expression is evaluated, which would be inefficient. in theory these style objects could be sourced from anywhere (`Form`, process variables, `Storage`...) but since the styles are an intrinsic part of the listbox object, it makes sense to define them as propeties of a class that is associated with this listbox. 
+you can create as many styles as necessary to handle every possible combination of relevant factors. in this example, the `0` suffix is for unselected lines and the `1` suffix is for selected lines. the key is to have all the style objects **predefined**, as opposed to creating a new object each time the meta expression is evaluated, which would be inefficient. in theory these style objects could be sourced from anywhere (`Form`, process variables, `Storage`...) but since the styles are an intrinsic part of the listbox object, it makes sense to define them as propeties of the class that is closely associated with this listbox. 
 
 ## On Load
 
