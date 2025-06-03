@@ -59,6 +59,9 @@ End case
 
 `cs.DataGenerator` is a user class that generates a set of random data in a specific range. 
 
+> ![TIP]
+> in 20 R5 or later, you may want to make this class a singleton for efficiency.
+
 ## The `meta` function
 
 the meta function returns the style object based on the row number and selected status.
