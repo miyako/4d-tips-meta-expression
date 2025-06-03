@@ -126,5 +126,5 @@ you may think that `Form.list.meta` would suffice, but it does not. you need to 
 > [!NOTE]
 > if you were to use a project method instead for the meta expression, the equivalent code would be
 > ```4d
-> return Form.list.meta
+> return Form.list.meta()
 > ```
