@@ -40,27 +40,34 @@ in this example, the `0` suffix is for unselected lines and the `1` suffix is fo
 
 the listbox is setup during the *On Load* form event.
 
-```4d
-var $event : Object
-$event:=FORM Event
-
-Case of 
-	: ($event.code=On Load)
+```4d	
+var $generator : cs.DataGenerator
+$generator:=cs.DataGenerator.new()
 		
-		var $generator : cs.DataGenerator
-		$generator:=cs.DataGenerator.new()
-		
-		//%W-550.12
-		Form.list:=cs.ListboxCollection.new($generator.collection($generator.lowercase; 80; 40))
-		//%W+550.12
-		
-End case 
+//%W-550.12
+Form.list:=cs.ListboxCollection.new($generator.collection($generator.lowercase; 80; 40))
+//%W+550.12 
 ```
 
 `cs.DataGenerator` is a user class that generates a set of random data in a specific range. 
 
 > [!TIP]
 > in 20 R5 or later, you may want to change this class to a [shared singleton](https://blog.4d.com/tag/singleton/) for efficiency
+
+```4d
+/*shared singleton */Class constructor()
+``` 
+
+> [!TIP]
+> in 20 R3 or later, you may want to use [dot dot dot](https://blog.4d.com/a-fresh-approach-to-writing-variadic-functions/) for variadic function declaration 
+
+```4d
+Function collection($f : 4D.Function; $size : Integer/*; ... */) : Collection
+	
+	//%W-550.16
+	C_VARIANT(${3})
+	//%W+550.16
+```
 
 ## The `meta` function
 
