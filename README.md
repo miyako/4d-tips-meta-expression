@@ -111,7 +111,7 @@ Function meta() : Object
 	return $meta
 ```
 
-## The property
+## The Property
 
 this is the key piece that completes the puzzle.
 
