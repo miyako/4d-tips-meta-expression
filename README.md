@@ -55,9 +55,9 @@ Form.list:=cs.ListboxCollection.new($generator.collection($generator.lowercase; 
 
 `cs.DataGenerator` is a user class that generates a set of random data in a specific range. supported types are:
 
-* lowercase
-* uppercase
-* date inrange
+* lowercase string of length
+* uppercase string of length
+* date in range
 * time in range
 * integer in range
 
