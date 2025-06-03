@@ -8,3 +8,76 @@ Example of using the meta expression in a collection based listbox
 ## The Listbox
 
 for simplicity, the listbox has a single column whose `dataSource` is `This.value` to display a [collection of scalar values](https://developer.4d.com/docs/FormObjects/listboxOverview#collection-or-entity-selection-list-boxes).
+
+## The Class
+
+`cs.ListboxCollection` is a user class to manage the conditional styling of this list box. it has `4` properties that correspond to the standard data sources of a collection based listbox.
+
+```4d
+property dataSource : Collection
+property selectedItemsSource : Collection
+property currentItemPositionSource : Integer
+property currentItemSource : Object
+```
+
+it also defines `3x2` sets of style objects for this listbox.
+
+```4d
+This.palette:={}
+This.palette.a0:={stroke: "rgb(220, 20, 60)"; fill: "rgb(250, 160, 160)"}
+This.palette.a1:={stroke: "rgb(248, 131, 121)"; fill: "rgb(139, 0, 0)"}
+	
+This.palette.b0:={stroke: "rgb(9, 121, 105)"; fill: "rgb(175, 225, 175)"}
+This.palette.b1:={stroke: "rgb(127, 255, 212)"; fill: "rgb(53, 94, 59)"}
+	
+This.palette.c0:={stroke: "rgb(96, 130, 182)"; fill: "rgb(173, 216, 230)"}
+This.palette.c1:={stroke: "rgb(240, 255, 255)"; fill: "rgb(0, 71, 171)"}
+```
+
+in this example, the `0` suffix is for unselected lines and the `1` suffix is for selected lines.
+
+## The `meta` function
+
+the meta function returns the style object based on the row number and selected status.
+
+```4d
+Function meta() : Object
+	
+	var $event : Object
+	$event:=FORM Event
+	
+	var $row : Integer
+	$row:=$event.row
+	
+	var $isRowSelected : Boolean
+	$isRowSelected:=$event.isRowSelected
+	
+	var $mod : Integer
+	$mod:=$row%3
+	
+	Case of 
+		: ($mod=0)
+			$palette:="a"
+		: ($mod=1)
+			$palette:="b"
+		: ($mod=2)
+			$palette:="c"
+	End case 
+	
+	$palette+=$isRowSelected ? "1" : "0"
+	$meta:=This.palette[$palette]
+	
+	return $meta
+```
+
+## The property
+
+this is the key piece that completes the puzzle.
+
+the "meta expression" property of this listbox is defined as follows:
+
+```4d
+Form.list.meta.call(Form.list)
+```
+
+you may think that `Form.list.meta` would suffice, but it does not. you need to explicitly define the expression as a function call that applies to a specific `This` object.
