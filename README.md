@@ -49,7 +49,15 @@ Form.list:=cs.ListboxCollection.new($generator.collection($generator.lowercase; 
 //%W+550.12 
 ```
 
-`cs.DataGenerator` is a user class that generates a set of random data in a specific range. 
+## Random Data Generator
+
+`cs.DataGenerator` is a user class that generates a set of random data in a specific range. supported types are:
+
+* lowercase
+* uppercase
+* date inrange
+* time in range
+* integer in range
 
 > [!TIP]
 > in 20 R5 or later, you may want to change this class to a [shared singleton](https://blog.4d.com/tag/singleton/) for efficiency
