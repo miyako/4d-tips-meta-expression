@@ -1,0 +1,18 @@
+text.info {
+	stroke: #808080;
+}
+
+listbox.demo {
+	horizontalLineStroke: transparent;
+	verticalLineStroke: transparent;
+	borderStyle: none;
+	sortable: false;
+	hideFocusRing: true;
+	hideSystemHighlight: true;
+}
+
+column.demo {
+	truncateMode: none;
+	enterable: false;
+	resizable: false;
+}
